@@ -56,6 +56,12 @@ method users-data(Str $user) {
 
 =begin pod
 
-TODO document File::HomeDir::MacOSX
+=head1 NAME
+
+File::HomeDir::MacOSX - Mac OS X implementation of File::HomeDir operations
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (c) 2016 Ahmad M. Zawawi under the MIT License
 
 =end pod
