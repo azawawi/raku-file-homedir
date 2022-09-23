@@ -1,9 +1,9 @@
 # File::HomeDir
-[![Build Status](https://travis-ci.org/azawawi/perl6-file-homedir.svg?branch=master)](https://travis-ci.org/azawawi/perl6-file-homedir) [![Build status](https://ci.appveyor.com/api/projects/status/github/azawawi/perl6-file-homedir?svg=true)](https://ci.appveyor.com/project/azawawi/perl6-file-homedir/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/azawawi/raku-file-homedir?svg=true)](https://ci.appveyor.com/project/azawawi/raku-file-homedir/branch/master)
 
-This is a Perl 6 port of [File::HomeDir](https://metacpan.org/pod/File::HomeDir).
+This is a Raku port of [File::HomeDir](https://metacpan.org/pod/File::HomeDir).
 File::HomeDir is a module for locating the directories that are "owned" by a
-user (typicaly your user) and to solve the various issues that arise trying to
+user (typically your user) and to solve the various issues that arise trying to
 find them consistently across a wide variety of platforms.
 
 The end result is a single API that can find your resources on any platform,
@@ -12,7 +12,7 @@ correctly no matter where you run it.
 
 ## Example
 
-```Perl6
+```Raku
 use v6;
 
 use File::HomeDir;
@@ -36,21 +36,22 @@ zef install File::HomeDir
 
 - To run tests:
 ```
-$ prove -ve "perl6 -Ilib"
+$ prove --ext .rakutest -ve "raku -I."
 ```
 
 - To run all tests including author tests (Please make sure
 [Test::Meta](https://github.com/jonathanstowe/Test-META) is installed):
 ```
 $ zef install Test::META
-$ AUTHOR_TESTING=1 prove -ve "perl6 -Ilib"
+$ TEST_AUTHOR=1 prove --ext .rakutest -ve "raku -I."
 ```
 
 ## Author
 
-Perl 6 version:
-- Ahmad M. Zawawi, azawawi on #perl6, https://github.com/azawawi/
-- Tadeusz Sośnierz, tadzik on #perl6, https://github.com/tadzik/
+Raku version:
+- Ahmad M. Zawawi, azawawi on #raku, https://github.com/azawawi/
+- Tadeusz Sośnierz, tadzik on #raku, https://github.com/tadzik/
+- Steve Dondley, sdondley on #raku, https://github.com/sdondley
 
 Perl 5 version:
 - Adam Kennedy (2005 - 2012)
