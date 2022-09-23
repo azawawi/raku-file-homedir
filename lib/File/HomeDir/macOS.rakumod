@@ -1,7 +1,7 @@
 
 use v6;
 
-unit role File::HomeDir::MacOSX;
+unit role File::HomeDir::macOS;
 
 method my-home {
   # Try HOME on every platform first, because even on Windows, some
@@ -58,7 +58,7 @@ method users-data(Str $user) {
 
 =head1 NAME
 
-File::HomeDir::MacOSX - Mac OS X implementation of File::HomeDir operations
+File::HomeDir::macOS - macOS implementation of File::HomeDir operations
 
 =head1 COPYRIGHT AND LICENSE
 
