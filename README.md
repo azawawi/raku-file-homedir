@@ -1,5 +1,6 @@
 # File::HomeDir
-[![Build status](https://ci.appveyor.com/api/projects/status/github/azawawi/raku-file-homedir?svg=true)](https://ci.appveyor.com/project/azawawi/raku-file-homedir/branch/master)
+[![Actions
+Status](https://github.com/azawawi/raku-file-homedir/workflows/test/badge.svg)](https://github.com/azawawi/raku-file-homedir/actions)
 
 This is a Raku port of [File::HomeDir](https://metacpan.org/pod/File::HomeDir).
 File::HomeDir is a module for locating the directories that are "owned" by a
