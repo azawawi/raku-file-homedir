@@ -1,69 +1,72 @@
 unit class File::HomeDir;
 
 use File::HomeDir::Win32;
-use File::HomeDir::macOS;
+use File::HomeDir::MacOSX;
 use File::HomeDir::Unix;
 
 my File::HomeDir $singleton;
 
-my $singleton;
-sub singleton() {
-  without $singleton {
-    $_ = File::HomeDir but $*DISTRO.is-win
-            ?? File::HomeDir::Win32
-            !! $*DISTRO.name.starts-with('macos')
-            ?? File::HomeDir::macOSX
-            !! File::HomeDir::Unix;
+method new
+{
+  return $singleton if $singleton.defined;
+
+  if $*DISTRO.is-win {
+    $singleton = self.bless does File::HomeDir::Win32;
+  } elsif $*DISTRO.name.starts-with('macos') {
+    $singleton = self.bless does File::HomeDir::MacOSX;
+  } else {
+    $singleton = self.bless does File::HomeDir::Unix;
   }
-  $singleton
+
+  return $singleton;
 }
 
 method my-home {
-  return singleton.my-home;
+  return File::HomeDir.new.my-home;
 }
 
 method my-desktop {
-  return singleton.my-desktop;
+  return File::HomeDir.new.my-desktop;
 }
 
 method my-documents {
-  return singleton.my-documents;
+  return File::HomeDir.new.my-documents;
 }
 
 method my-music {
-  return singleton.my-music;
+  return File::HomeDir.new.my-music;
 }
 
 method my-pictures {
-  return singleton.my-pictures;
+  return File::HomeDir.new.my-pictures;
 }
 
 method my-videos {
-  return singleton.my-videos;
+  return File::HomeDir.new.my-videos;
 }
 
 method my-data {
-  return singleton.my-data;
+  return File::HomeDir.new.my-data;
 }
 
 method my-dist-config(Str $distro-name) {
-  return singleton.my-dist-config($distro-name);
+  return File::HomeDir.new.my-dist-config($distro-name);
 }
 
 method my-dist-data(Str $distro-name) {
-  return singleton.my-dist-data($distro-name);
+  return File::HomeDir.new.my-dist-data($distro-name);
 }
 
 method users-home(Str $user) {
-  return singleton.users-home($user);
+  return File::HomeDir.new.users-home($user);
 }
 
 method users-documents(Str $user) {
-  return singleton.users-documents($user);
+  return File::HomeDir.new.users-documents($user);
 }
 
 method users-data(Str $user) {
-  return singleton.users-data($user);
+  return File::HomeDir.new.users-data($user);
 }
 
 =begin pod
