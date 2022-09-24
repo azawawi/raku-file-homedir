@@ -12,7 +12,7 @@ sub singleton() {
     $_ = File::HomeDir but $*DISTRO.is-win
             ?? File::HomeDir::Win32
             !! $*DISTRO.name.starts-with('macos')
-            ?? File::HomeDir::MacOSX
+            ?? File::HomeDir::macOSX
             !! File::HomeDir::Unix;
   }
   $singleton
