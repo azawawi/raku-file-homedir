@@ -1,7 +1,7 @@
 {
   "name"        : "File::HomeDir",
   "license"     : "MIT",
-  "version"     : "1.0.1",
+  "version"     : "1.0.2",
   "perl"        : "6.c",
   "description" : "Find your home and other directories on any platform",
   "provides"    : {
