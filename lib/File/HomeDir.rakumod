@@ -1,7 +1,7 @@
 unit class File::HomeDir;
 
 use File::HomeDir::Win32;
-use File::HomeDir::macOSX;
+use File::HomeDir::macOS;
 use File::HomeDir::Unix;
 
 my File::HomeDir $singleton;
@@ -13,7 +13,7 @@ method new
   if $*DISTRO.is-win {
     $singleton = self.bless does File::HomeDir::Win32;
   } elsif $*DISTRO.name.starts-with('macos') {
-    $singleton = self.bless does File::HomeDir::macOSX;
+    $singleton = self.bless does File::HomeDir::macOS;
   } else {
     $singleton = self.bless does File::HomeDir::Unix;
   }
